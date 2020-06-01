@@ -1,0 +1,31 @@
+<div gdAreas="header | content" gdGap="16px" gdRows="auto auto">
+  <div gdArea="header" fxLayout="row" fxLayoutAlign="space-round">
+    <div fxFlex="16.7" fxLayout="row" fxLayoutAlign="center center">
+      <a class="header-back" routerLink="/job">
+        Back To Search
+      </a>
+    </div>
+    <div fxFlex="66.6" fxLayout="row" fxLayoutAlign="center center">
+      <span class="header-title">All Jobs</span>
+    </div>
+    <div fxFlex="16.7" fxLayout="row" fxLayoutAlign="center center"></div>
+  </div>
+  <div gdArea="content">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div *ngIf="jobs.length === 0" class="no-job">
+        No Job Item
+      </div>
+      <div
+        *ngIf="jobs.length"
+        fxFlex="0 0 900px"
+        fxLayout="row wrap"
+        fxLayoutAlign="space-round"
+        fxLayoutGap="10px"
+      >
+        <ng-container *ngFor="let job of jobs">
+          <app-job [job]="job" fxFlex="0 0 400px" class="job-item"></app-job>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

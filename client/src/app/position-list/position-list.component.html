@@ -1,0 +1,29 @@
+<div gdAreas="header | content" gdGap="16px" gdRows="auto auto">
+  <div gdArea="header" fxLayout="row" fxLayoutAlign="space-round">
+    <div fxFlex="16.7" fxLayout="row" fxLayoutAlign="center center">
+      <a class="header-back" routerLink="/job">
+        Back To Search
+      </a>
+    </div>
+    <div fxFlex="66.6" fxLayout="row" fxLayoutAlign="center center">
+      <span class="header-title">{{ title }} Jobs</span>
+    </div>
+    <div fxFlex="16.7" fxLayout="row" fxLayoutAlign="center center">
+      <a class="header-list" routerLink="/jobs">
+        List All Jobs
+      </a>
+    </div>
+  </div>
+  <div gdArea="content">
+    <div fxLayout="row" fxLayoutAlign="center">
+      <div *ngIf="positions.length === 0" class="no-position">
+        No Position Item
+      </div>
+      <mat-list *ngIf="positions.length">
+        <mat-list-item *ngFor="let position of positions">
+          <app-position [position]="position"></app-position>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

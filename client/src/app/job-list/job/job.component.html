@@ -1,0 +1,15 @@
+<mat-card
+  fxLayout="column"
+  fxLayoutGap="32px"
+  fxLayoutAlign="center center"
+  (click)="handleClick()"
+>
+  <mat-card-content class="job-content">
+    <div class="job-title">
+      {{ job.title ? job.title : "No Job Title" }}
+    </div>
+    <div class="job-location" fxLayout="row" fxLayoutAlign="center">
+      {{ job.location ? job.location : "No Location" }}
+    </div>
+  </mat-card-content>
+</mat-card>

@@ -1,0 +1,15 @@
+<div fxLayout="row" fxLayoutGap="10px">
+  <div fxFlex="15">
+    <img src="{{ position.company_logo }}" width="100px" height="100px" />
+  </div>
+  <div fxFlex="75" fxLayout="column" fxLayoutGap="10px">
+    <div class="company-name">{{ position.company }}</div>
+    <div>{{ position.title }} - {{ position.type }}</div>
+    <div [innerHTML]="position.description"></div>
+  </div>
+  <div fxFlex="10">
+    <button mat-raised-button (click)="handleApply()">
+      Apply Now!
+    </button>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div gdAreas="header | content" gdGap="16px" gdRows="auto auto">
+  <div gdArea="header" fxLayout="row" fxLayoutAlign="space-round">
+    <div fxFlex="16.7" fxLayout="row" fxLayoutAlign="center center"></div>
+    <div fxFlex="66.6" fxLayout="row" fxLayoutAlign="center center"></div>
+    <div fxFlex="16.7" fxLayout="row" fxLayoutAlign="center center">
+      <a class="header-list" routerLink="/jobs">
+        List All Jobs
+      </a>
+    </div>
+  </div>
+  <div gdArea="content">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <h2>Find A Job</h2>
+          <mat-error *ngIf="postInvalid">
+            The job title and location were invalid.
+          </mat-error>
+          <mat-form-field class="full-width-input">
+            <input
+              matInput
+              placeholder="Job Title"
+              formControlName="title"
+              required
+            />
+            <mat-error>
+              Job title is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="full-width-input">
+            <input
+              matInput
+              placeholder="Location"
+              formControlName="location"
+              required
+            />
+            <mat-error>
+              Location is required
+            </mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Search</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
